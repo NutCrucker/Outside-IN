@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="OutsideInDevelopment.Configs" GeneratedClassName="Titles">
+  <Profiles />
+  <Settings>
+    <Setting Name="FbHebTitle" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Facebook</Value>
+    </Setting>
+    <Setting Name="FbEngTitle" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">פייסבוק</Value>
+    </Setting>
+    <Setting Name="a" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+  </Settings>
+</SettingsFile>
