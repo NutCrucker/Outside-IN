@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Net;
+using System.Text.RegularExpressions;
 using OpenQA.Selenium;
 using OutsideInDevelopment.Configs;
 
@@ -38,15 +40,19 @@ namespace OutsideInDevelopment
             return num;
         }
 
-        internal static bool ValidateGroup()
+        internal static bool ValidateGroup(IWebDriver webDriver,GroupsPageObject groupsPage, string groupName)
         {
-            Console.WriteLine("Is this the correct group?[Y/N]");
-            if (Console.ReadLine() == "Y") return true;
-            else
+            string isGroup = @"group";
+            string URL = webDriver.Url;
+            Match match = Regex.Match(URL, isGroup);
+            if (match.Success)
             {
-                Console.WriteLine("Not the correct group, moving on.");
-                return false;
+                string PageString = groupsPage.GetGroupName();
+                match = Regex.Match(PageString, groupName);
+                if (match.Success) return true;
             }
+            MessageManager.NotCorrectGroup();
+            return false;
         }
 
         internal static void ValidateLogin(IWebDriver webDriver)

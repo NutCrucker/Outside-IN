@@ -12,12 +12,19 @@ namespace OutsideInDevelopment
         [FindsBy(How = How.CssSelector, Using = "button._1mf7._4jy0._4jy3._4jy1._51sy.selected._42ft")]
         private IWebElement PostButton { get; set; }
 
+        [FindsBy(How = How.Id, Using = "seo_h1_tag")]
+        private IWebElement GroupsName { get; set; }
+
         public void Post(string path)
         {
             TextBox.SendKeys(File.ReadAllText(path));
             System.Threading.Thread.Sleep(2000);
             PostButton.Click();
             System.Threading.Thread.Sleep(5000);
+        }
+        public string GetGroupName()
+        {
+            return GroupsName.Text;
         }
     
     }

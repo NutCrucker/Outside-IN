@@ -24,10 +24,12 @@ namespace OutsideInDevelopment
         {
             mainPage.Search(name);
         }
-        internal void GoToGroup(string name)
+        internal bool GoToGroup(string name)
         {
             IWebElement Group = webDriver.FindElement(By.PartialLinkText(name));
             Group.Click();
+            System.Threading.Thread.Sleep(2000);
+            return Validator.ValidateGroup(webDriver, groupPage, name);
         }
         internal void PostInGroup(string path)
         {

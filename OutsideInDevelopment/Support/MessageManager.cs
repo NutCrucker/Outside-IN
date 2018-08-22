@@ -57,5 +57,10 @@ namespace OutsideInDevelopment
             Console.WriteLine("2 - IE");
             Console.WriteLine("3 - Firefox");
         }
+
+        internal static void NotCorrectGroup()
+        {
+            Console.WriteLine("Not the correct group, moving on.");
+        }
     }
 }

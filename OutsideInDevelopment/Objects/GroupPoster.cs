@@ -21,8 +21,7 @@ namespace OutsideInDevelopment
             for (int i = 0; i < runDetails.GroupsToPost.Length; i++)
             {
                 facebookUtil.SearchGroup(runDetails.GroupsToPost[i]);
-                facebookUtil.GoToGroup(runDetails.GroupsToPost[i]);
-                if (Validator.ValidateGroup())
+                if (facebookUtil.GoToGroup(runDetails.GroupsToPost[i]))
                 {
                     facebookUtil.PostInGroup(runDetails.path);
                 }
